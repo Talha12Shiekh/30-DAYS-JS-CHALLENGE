@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling</title>
+    <style>
+      .visible {
+        opacity: 0;
+      }
+      .color-div {
+        width: 30vw;
+        height: 30vh;
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Change</button>
+    <input type="text" />
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus
+      voluptates corporis repudiandae dolor esse id maiores dolores incidunt
+      blanditiis praesentium?
+    </p>
+    <form>
+      <input type="text" />
+      <input type="password" />
+      <input type="submit" value="Submit" />
+    </form>
+    <select name="Food">
+      <option value="Biryani">Biryani</option>
+      <option value="Pasta">Pasta</option>
+      <option value="Chicken">Chicken</option>
+    </select>
+    <div class="dynamicDiv"></div>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contacts</li>
+    </ul>
+    <img
+      width="200"
+      height="200"
+      src="https://media.licdn.com/dms/image/D5622AQFUUo92DL_OhQ/feedshare-shrink_800/0/1721110085647?e=1724284800&v=beta&t=yQe1ZnZKLiUfJJTLMfqG-eWBVIFuXtfR3GlAEElR_Fo"
+      alt="Loading..."
+    />
+    <div class="color-div"></div>
+  </body>
+  <script>
+    const getElement = (el) => document.querySelector(el);
+    // Activity 1
+    const button = getElement("button"),
+      paragraph = getElement("p"),
+      image = getElement("img"),
+      div = getElement(".color-div"),
+      input = getElement("input"),
+      form = getElement("form"),
+      select = getElement("select"),
+      ulList = getElement("ul"),
+      dynamicDiv = getElement(".dynamicDiv");
+    // Task 1
+    button.addEventListener("click", function () {
+      paragraph.textContent = "Talha Shiekh";
+    });
+
+    // Task 2
+
+    image.addEventListener("dblclick", () => {
+      image.classList.toggle("visible");
+    });
+
+    // Activity 2
+
+    // Task 3
+    div.addEventListener("mouseover", (_) => {
+      div.style.backgroundColor = `red`;
+    });
+
+    // Task 4
+    div.addEventListener("mouseout", (_) => {
+      div.style.backgroundColor = `bisque`;
+    });
+
+    // Activity 3
+
+    // Task 5
+    input.addEventListener("keydown", (e) => {
+      console.log(e.key);
+    });
+
+    // Task 6
+    input.addEventListener("keyup", function () {
+      paragraph.textContent = this.value;
+    });
+
+    // Activity 4
+
+    // Task 7
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      console.log(form.firstElementChild.value);
+      console.log(form.children[1].value);
+    });
+
+    // Task 8
+    select.addEventListener("change", () => {
+      paragraph.textContent = select.value;
+    });
+
+    // Activity 5
+
+    // Task 9
+    ulList.addEventListener("click", (e) => {
+      console.log(e.target.textContent);
+    });
+
+    // Task 10
+
+    for (let i = 0; i < 5; i++) {
+      let button = document.createElement("button");
+      button.textContent = "Button " + i;
+      dynamicDiv.appendChild(button);
+    }
+    dynamicDiv.addEventListener("click", (event) => {
+      if (event.target.tagName === "BUTTON") {
+        console.log(event.target.innerText);
+      }
+    });
+  </script>
+</html>
