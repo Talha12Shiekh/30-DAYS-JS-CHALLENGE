@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12 - Error handling</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+// Activity 1
+
+// Task 1
+
+// function throwError(){
+//     throw new Error("What are you doing");
+// }
+
+// try {
+//     throwError()
+// } catch (error) {
+//     console.log("Error came")
+// }
+
+
+// Task 2
+
+// function divide(n1,n2){
+//     if(n2 === 0) throw new Error("Number can not be divided by Zero")
+//     const division = n1 / n2;
+//     return division
+// }
+
+// try {
+//     divide(1,0)
+// } catch (error) {
+//     console.log(error)
+// }
+
+// Activity 2
+
+// Task 3
+
+// try {
+//     divide(2,0);
+// } catch (error) {
+//     console.log(error)
+// }finally{
+//     console.log("Finally")
+// }
+
+// Activity 3
+
+// Task 4
+
+// class DivisionError extends Error{
+//     constructor(message,name){
+//         super(message);
+//         this.name = name;
+//     }
+// }
+
+
+// function handleError(){
+//     throw new DivisionError("Division Error","Custom Error")
+// }
+
+// try {
+//     handleError()
+// } catch (error) {
+//     console.log(error.name)
+// }
+
+// Task 5
+
+// class InputError extends Error{
+//     constructor(message,name){
+//         super(message);
+//         this.name = name;
+//     }
+// }
+
+// let input = document.createElement("input");
+// document.body.append(input);
+
+// input.addEventListener("keydown",(e) => {
+//     if(e.key === "Enter"){
+//         try{
+//             checkUserInput(e.target.value)
+//         }catch(err){
+//             console.error(err)
+//         }
+//     }
+// })
+
+// function checkUserInput(value){
+//     if(value === "") throw new InputError("Value can not be empty","Input Error");
+// }
+
+
+// Activity 4
+
+// Task 6
+
+
+
+function fetchData(delay){
+    const randomNumber = Math.floor(Math.random() * 2);
+    return new Promise((res,rej) => {
+        if(randomNumber === 1){
+            res("Succeed")
+        }else {
+            rej("Failed");
+        }
+    },delay)
+}
+
+// fetchData(2000).then(res => console.log(res)).catch(err => console.log(err))
+
+// Task 7
+
+// async function handleRandomError(){
+//     try {
+//         const res = await fetchData(2000);
+//         console.log(res)
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+// handleRandomError()
+
+
+// Activity 5
+
+// Task 8
+
+// const data = fetch("http://127.0.0.1:5511/day12.html").then(res => console.log(res)).catch(err => console.log("Not a valid api"));
+
+// console.log(data)
+
+// Task 9
+
+async function handleApi(){
+    try {
+        await fetch("http://127.0.0.1:5511/day12.html");
+    } catch (error) {
+        console.log("Invalid API")
+    }
+}
+
+handleApi()
+
+</script>
+</html>

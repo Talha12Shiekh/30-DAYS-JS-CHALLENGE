@@ -87,5 +87,5 @@ function fetchData(value, delay) {
 
 // Task 9
 
-Promise.race([fetchData("First Promise",2000), fetchData("Second Promise",1000)]).then((value) => {
-});
+// Promise.race([fetchData("First Promise",2000), fetchData("Second Promise",1000)]).then((value) => {
+// });
