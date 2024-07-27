@@ -1,0 +1,26 @@
+{
+  "name": "30-days-javascript-challenge",
+  "version": "1.0.0",
+  "description": "30 days javascript challenge by chai aur code",
+  "main": "day1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talha12Shiekh/30-DAYS-JS-CHALLENGE.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Talha Shiekh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Talha12Shiekh/30-DAYS-JS-CHALLENGE/issues"
+  },
+  "homepage": "https://github.com/Talha12Shiekh/30-DAYS-JS-CHALLENGE#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "lodash": "^4.17.21"
+  }
+}
