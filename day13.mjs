@@ -1,5 +1,7 @@
 //                    Activity 1
 
+// import {manageItems,generateId} from "./day15.mjs";
+
 // Task 1
 
 // export const sum = (a,b) => a+b;
@@ -65,4 +67,26 @@
 // }
 
 // fetchData()
+
+let books = [];
+
+// for (let i = 0; i < 10; i++) {
+//     const singlebook = {
+//         name:"Talha Portfolio",
+//         author:"Talha shiekh",
+//         id:i,
+//     }
+//     const newBooks = manageItems(singlebook,books)
+//     newBooks.addItems();
+//     books = newBooks.removeItems(3);
+// }
+
+// const singlebook = {
+//   name: "Talha Portfolio",
+//   author: "Talha shiekh",
+//   id: 1,
+// };
+// const newBooks = manageItems(singlebook, books);
+// newBooks.addItems()
+// newBooks.listItems();
 
