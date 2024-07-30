@@ -1,100 +1,155 @@
-// function outerFun(){
-//     let count = 0
+// function outerFn(){
+//     let name = "Talha shiekh";
 //     return function(){
-//         console.log(count)
+//         console.log(name);
 //     }
 // }
 
-// let result = outerFun();
-// result()
+// let innerFn = outerFn();
+// innerFn()
+
 
 // function counter(){
 //     let count = 0;
-//     function increment () {
-//         count++;
+//     function increment(){
+//         count++
 //     }
 //     function getCount(){
 //         console.log(count);
 //     }
+
 //     return [increment,getCount];
 // }
 
-// let firstCounter = counter();
-// let secondCounter = counter();
+// let [incr,count1] = counter();
 
-// secondCounter[0]();
-// secondCounter[0]();
-// secondCounter[1]();
+// incr()
+// incr()
+// incr();
+// count1()
 
-// firstCounter[0]()
-// firstCounter[0]()
-// firstCounter[0]()
-// firstCounter[0]()
-// firstCounter[1]()
+// function getRandomNumbers(num){
+//     return Math.floor(Math.random() * num);
+// }
 
+// function generateRandomId(){
+//     let id = getRandomNumbers(5);
 
-// export function generateId(){
-//     // let string = "lkfjadljfala";
-//     let randomId = 0;
 //     return function(){
-//         randomId++;
-//         // return string + randomId;
-//         return randomId
+//         console.log(id);
+//         id++
 //     }
 // }
 
-// const randomId = generateId();
-// console.log(randomId())
+// const firstId = generateRandomId()
+// firstId()
+// firstId()
+// firstId()
+// firstId()
 
 
 // function greetUser(name){
-//     let UserName = name;
-//     return () => {
-//         console.log(`Hello ${UserName} nice to meet you !`)
+//     let userName = name;
+//     return function(){
+//         return `Hello ${userName} it was nice to meet you`
+//     }
+// } 
+// let firstUserGreet = greetUser("John");
+// console.log(firstUserGreet())
+
+
+// function LogIndex(index){
+//     let correctIndex = index;
+
+//     return function(){
+//         console.log(correctIndex)
 //     }
 // }
 
-// const firstUser = greetUser("Ahmed");
-// console.log(firstUser())
+// let arrOfFunctions = [];
 
-// function logIndex(num){
-//     let index = num;
-//     return () => {
-//         return index;
-//     }
+// for (let i = 0; i < 10; i++) {
+    
+//     arrOfFunctions.push(LogIndex(i));
+    
 // }
 
-// let arrofFunctions = [];
-
-// for(let i = 0;i<=10;i++){
-//     arrofFunctions.push(logIndex(i))
-// }
-
-// arrofFunctions.forEach(fn => console.log(fn()))
+// arrOfFunctions.forEach(fn => fn())
 
 
-// export function manageItems(item,arr){
-//     let array = arr;
-//     const singleItem = item;
+// export function manageItems(){
+//      let arr = [];
+     
+//      function addItems(item){
+//         arr.push(item);
+//         return arr;
+//      }
 
-//     function addItems(){
-//         return array.push(singleItem)
-//     }
+//      function removeItem(item){
+//         const removingIndex = arr.findIndex(el => el === item);
+//         if(removingIndex !== -1){
+//             arr.splice(removingIndex,1);
+//             return arr;
+//         }
+//      }
 
-//     function removeItems(id){
-//         return array.filter(it => it["id"] !== id);
-//     }
+//      function listItems(){
+//         arr.forEach(item => console.log(item))
+//      }
 
-//     function listItems(){
-//         return array.forEach(item => {
-//                 console.log(item);
-//         });
-//     }
-
-//     return {addItems,removeItems,listItems};
+//      return [addItems,removeItem,listItems];
 // }
 
 
+// function sum(a,b){
+//     return a+b;
+// }
+
+// function memoizerFn(fn){
+//     let cache = new Map();
+//     return function(x,y){
+//         let key = `${x}+${y}`
+        
+//         if(cache.has(key)){
+//             return cache.get(key)
+//         }else {
+//             let result = fn(x,y);
+//             cache.set(key,result);
+//             console.log(cache)
+//             return result;
+//         }
+//     }
+// }
+
+// let memoizedFn1 = memoizerFn(sum);
+// memoizedFn1(2,3)
+// memoizedFn1(3,5)
+// memoizedFn1(5,8)
 
 
 
+// function factorial(n){
+//     if(n == 0 || n == 1) return 1;
+
+//     return n * factorial(n - 1);
+// }
+
+// function memoizedFactorial(fn){
+//     let cache = new Map();
+//     return function(n){
+//         if(cache.has(n)){
+//             return cache.get(n);
+//         }else {
+//             let result = fn(n);
+//             cache.set(n,result);
+//             console.log(cache)
+//             return result;
+//         }
+//     }
+// }
+
+// let NumberFactorial1 = memoizedFactorial(factorial)
+// NumberFactorial1(3)
+// NumberFactorial1(4)
+// NumberFactorial1(5)
+// NumberFactorial1(6)

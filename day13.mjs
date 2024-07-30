@@ -90,3 +90,18 @@ let books = [];
 // newBooks.addItems()
 // newBooks.listItems();
 
+
+// import { manageItems } from "./day15.mjs";
+
+
+// const [addBooks,deleteBooks,listBooks] = manageItems();
+
+// addBooks("Talha Great");
+// addBooks("Talha Great 1")
+// addBooks("Talha Great 2")
+// addBooks("Talha Great 3")
+// let booksarr = addBooks("Talha Great 4")
+// let booksAfterDelete = deleteBooks("Talha Great 1")
+// let listedBooks = listBooks()
+
+// console.log(listedBooks)
