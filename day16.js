@@ -96,3 +96,22 @@
 // console.log(countOccurences(arr,2))
 
 
+// function checkPalindromeString(str,s,e){
+//     if(str.length == 0) return true;
+
+//     if(s === e) return true;
+
+//     if(str[s] !== str[e]) return false;
+
+//     if(s < e + 1){
+//         return checkPalindromeString(str,s+1,e-1)
+//     }
+
+//     return true;
+// }
+
+// let string = "Talha shiekh"
+
+// console.log(checkPalindromeString(string,0,string.length - 1))
+
+
