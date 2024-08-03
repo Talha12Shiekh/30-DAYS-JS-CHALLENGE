@@ -85,29 +85,29 @@
 
 // console.log(element1)
 
-class Stack{
-    constructor(items = []){
-        this.items = items
-    }
+// class Stack{
+//     constructor(items = []){
+//         this.items = items
+//     }
 
-    pushItems(item){
-        return this.items.push(item)
-    }
+//     pushItems(item){
+//         return this.items.push(item)
+//     }
 
-    isEmpty(){
-        return this.items.length == 0;
-    }
+//     isEmpty(){
+//         return this.items.length == 0;
+//     }
 
-    pop(){
-        if(this.isEmpty()) return "UnderFlow";
-        return this.items.pop()
-    }
+//     pop(){
+//         if(this.isEmpty()) return "UnderFlow";
+//         return this.items.pop()
+//     }
 
-    peek(){
-        if(this.isEmpty()) return "UnderFlow";
-        return this.items[0];
-    }
-}
+//     peek(){
+//         if(this.isEmpty()) return "UnderFlow";
+//         return this.items[0];
+//     }
+// }
 
 // let arr = [1,2,3]
 
@@ -120,22 +120,93 @@ class Stack{
 // console.log(firstStack.peek())
 // console.log(firstStack)
 
-function reverseString(str){
-    let stack = new Stack();
+// function reverseString(str){
+//     let stack = new Stack();
 
-    for(let i =0;i<str.length;i++){
-        stack.pushItems(str[i])
-    }
+//     for(let i =0;i<str.length;i++){
+//         stack.pushItems(str[i])
+//     }
 
-    let reversedStr = "";
-    while(!stack.isEmpty()){
-       reversedStr += stack.pop();
+//     let reversedStr = "";
+//     while(!stack.isEmpty()){
+//        reversedStr += stack.pop();
+//     }
+//     return reversedStr;
+// }
+// let string = "hello";
+// let a = reverseString(string);
+// console.log(a);
+
+// enqueue : To add elements at the end of the queue.
+// dequeue: To remove an element from the front of the queue.
+// peek: To get the front element without removing it.
+// isEmpty: To check whether an element is present in the queue or not.
+// printQueue: To print the elements present in the queue.
+
+
+// class Queue{
+//     constructor(){
+//         this.items = [];
+//         this.frontIndex = 0;
+//         this.backIndex = 0;
+//     }
+
+//     enqueue(item){
+//         this.items[this.backIndex] = item;
+//         this.backIndex++;
+//         return item + " addded"
+//     }    
+
+//     dequeue(){
+//         const item = this.items[this.frontIndex];
+//         delete this.items[this.frontIndex];
+//         this.frontIndex++;
+//         return item + " Deleted";
+//     }
+
+//     front(){
+//         const firstElement = this.items[this.frontIndex];
+//         return firstElement
+//     }
+// }
+
+// const queue = new Queue();
+// queue.enqueue(3);
+// queue.enqueue(4);
+// queue.enqueue(5);
+// queue.dequeue()
+// console.log(queue.front())
+
+
+// class PrinterQueue{
+//     constructor(){
+//         this.jobs = [];
+//     }
+
+//     addJobs(job){
+//         this.jobs.push(job);
+//         return job + " Added to the jobs";
+//     }
+
+//     printJobs() {
+//         for(let i = 0;i<this.jobs.length;i++){
+//             console.log(`Processing ${this.jobs[i]}`)
+//         }
+//     }
+// }
+
+// let firstPrinterQueue = new PrinterQueue();
+// firstPrinterQueue.addJobs("Document 1");
+// firstPrinterQueue.addJobs("Document 2");
+
+// firstPrinterQueue.printJobs()
+
+class TreeNode{
+    constructor(value,left,right){
+        this.value = value;
+        this.left = left;
+        this.right =right;
     }
-    return reversedStr;
 }
-let string = "hello";
-let a = reverseString(string);
-console.log(a);
 
-
-
+let FirstNode = new TreeNode(1,2,3);
